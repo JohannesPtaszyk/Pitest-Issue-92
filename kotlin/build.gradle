@@ -1,7 +1,7 @@
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
-    id 'pl.droidsonroids.pitest'
+    id 'info.solidsoft.pitest'
 }
 
 java {
@@ -16,6 +16,10 @@ tasks.withType(Test) {
         events "started", "skipped", "passed", "failed"
         showStandardStreams true
     }
+}
+
+pitest {
+    junit5PluginVersion = '1.0.0'
 }
 
 dependencies {
